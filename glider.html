@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glider JS</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./node_modules/@glidejs/glide/dist/css/glide.core.min.css">
+    <link rel="stylesheet" href="./node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
+    <style>
+
+
+
+    </style>
+</head>
+<body>
+
+    <!-- <div class="m-5 p-5">
+        <a href="#" id="go" class="btn btn-primary">To Google</a>
+        <button class="btn btn-outline-primary" onclick="showToast()">To Google</button>
+    </div> -->
+
+    <div class="m-5 p-5">
+        <div class="glide">
+            <div data-glide-el="track" class="glide__track">
+              <ul class="glide__slides">
+                <li class="glide__slide p-5 text-center bg-primary">1</li>
+                <li class="glide__slide p-5 text-center bg-secondary">2</li>
+                <li class="glide__slide p-5 text-center bg-success">3</li>
+                <li class="glide__slide p-5 text-center bg-danger">4</li>
+                <li class="glide__slide p-5 text-center bg-warning">5</li>
+              </ul>
+            </div>
+
+            <!-- <div class="my-5 text-center" data-glide-el="controls">
+                <button class="btn btn-primary px-5" data-glide-dir="<">Start</button>
+                <button class="btn btn-primary px-5" data-glide-dir=">">End</button>
+            </div> -->
+
+            <div class="glide__arrows" data-glide-el="controls">
+                <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+                    <i class="bi bi-arrow-left"></i>
+                </button>
+                <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+                    <i class="bi bi-arrow-right"></i>
+                </button>
+            </div>
+
+            <div class="glide__bullets" data-glide-el="controls[nav]">
+                <button class="glide__bullet" data-glide-dir="=0"></button>
+                <button class="glide__bullet" data-glide-dir="=1"></button>
+                <button class="glide__bullet" data-glide-dir="=2"></button>
+                <button class="glide__bullet" data-glide-dir="=3"></button>
+                <button class="glide__bullet" data-glide-dir="=4"></button>
+            </div>
+        </div>
+    </div>
+
+   
+
+    <script src="./node_modules/@glidejs/glide/dist/glide.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+
+        new Glide('.glide').mount();
+
+    </script>
+    
+</body>
+</html>

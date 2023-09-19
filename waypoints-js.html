@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Libraries Testing</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/animate.css/animate.min.css">
+    <style>
+
+        body {
+            height: 3000px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary top-0 w-100 animate__animated">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+    </nav>
+    
+    <div class="vh-100 m-5 p-5 border border-primary">
+        <div class="boxes animate__animated animate__bounce">
+            <h1>Thet Zaw Hein</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi provident laudantium hic illum optio rem obcaecati unde et doloribus commodi ea, nulla sunt ex blanditiis consequuntur nesciunt excepturi aut minus?
+            </p>
+        </div>
+    </div>
+
+    <div class="vh-100 m-5 p-5 bg-secondary border border-primary" id="obj">
+        <div class="boxes animate__animated">
+            <h1>Thet Zaw Hein</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi provident laudantium hic illum optio rem obcaecati unde et doloribus commodi ea, nulla sunt ex blanditiis consequuntur nesciunt excepturi aut minus?
+            </p>
+        </div>
+    </div>
+
+    <div class="vh-100 m-5 p-5 border border-primary">
+        <div class="boxes animate__animated">
+            <h1>Thet Zaw Hein</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi provident laudantium hic illum optio rem obcaecati unde et doloribus commodi ea, nulla sunt ex blanditiis consequuntur nesciunt excepturi aut minus?
+            </p>
+        </div>
+    </div>
+
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./node_modules/waypoints/lib/noframework.waypoints.min.js"></script>
+
+    <script>
+
+        let navBar = document.querySelector(".navbar");
+        let boxes = document.querySelectorAll(".boxes");
+
+        boxes.forEach(function(currentBox) {
+            new Waypoint({
+                element : currentBox,
+                handler : function(direction) {
+                    if(direction === "down") {
+                        currentBox.classList.add("animate__bounce")
+                    }
+                },
+                offset : "100%" 
+            })
+        })
+
+        new Waypoint({
+            element: document.getElementById("obj"),
+            handler: function(direction) {
+                if(direction === "down") {
+                    navBar.classList.add("position-fixed", "animate__slideInDown");
+                } else {
+                    navBar.classList.replace("animate__slideInDown", "animate__slideOutUp");
+                    // Position-fixed ကို ဖြုတ်တဲ့အချိန်နဲ့ slideOutUp run တဲ့ အချိန်နဲ့က တစ်ပြိုင်နက်တည်းဖြစ်နေတော့ Animation က မပေါ်
+                    // အဲ့တာကြောင့် setTimeOut ခံပြီး remove
+                    setTimeout(() => {
+                        navBar.classList.remove("position-fixed", "animate__slideOutUp");
+                    }, 500);
+                }
+
+                
+                console.log("I'm waypoint");
+            },
+            offset : "25%"
+        });
+
+    </script>
+    
+</body>
+</html>
