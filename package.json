@@ -7,6 +7,7 @@
     "chart.js": "^4.3.0",
     "counterup2": "^2.0.2",
     "lodash": "^4.17.21",
+    "moment": "^2.29.4",
     "sweetalert2": "^11.7.12",
     "typed.js": "^2.0.16",
     "venobox": "^2.0.4",
